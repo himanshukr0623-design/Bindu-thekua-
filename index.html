@@ -1,1 +1,371 @@
-# Bindu-thekua-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bindu Thekua | Asli Swaad Ab Aapke Ghar Tak</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --maroon: #5A1827;
+            --gold: #D4AF37;
+            --cream: #FFFDD0;
+            --bg-clean: #FAFAFA;
+            --text-dark: #1C1C1E;
+            --text-light: #6E6E73;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-clean);
+            color: var(--text-dark);
+        }
+
+        .promo-bar {
+            background-color: var(--maroon);
+            color: var(--cream);
+            text-align: center;
+            padding: 8px 16px;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+        }
+
+        header {
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 16px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.02);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo-text h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 22px;
+            font-weight: 800;
+            color: var(--maroon);
+            line-height: 1;
+        }
+
+        .logo-text span {
+            font-size: 11px;
+            color: var(--text-light);
+            letter-spacing: 1px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            margin: 0 15px;
+            font-size: 14px;
+        }
+
+        .cta-btn {
+            background-color: var(--maroon);
+            color: white;
+            padding: 12px 26px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 4px 15px rgba(90, 24, 39, 0.2);
+            transition: all 0.2s ease;
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .hero {
+            max-width: 1280px;
+            margin: 30px auto;
+            padding: 80px 40px;
+            background: linear-gradient(135deg, rgba(90, 24, 39, 0.95), rgba(45, 10, 18, 0.97)),
+                        url('https://images.unsplash.com/photo-1589301760014-d929f3979dbc?q=80&w=1200') center/cover;
+            border-radius: 32px;
+            color: #ffffff;
+            text-align: center;
+        }
+
+        .tag {
+            background-color: var(--gold);
+            color: var(--maroon);
+            padding: 6px 18px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 800;
+            display: inline-block;
+            margin-bottom: 24px;
+        }
+
+        .hero h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 48px;
+            margin-bottom: 16px;
+            color: var(--cream);
+        }
+
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 35px;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 60px auto;
+            padding: 0 20px;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .section-header h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 36px;
+            color: var(--maroon);
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 40px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.03);
+            border: 1px solid rgba(0,0,0,0.03);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-img-wrapper {
+            position: relative;
+            height: 280px;
+            background-color: #f5f5f7;
+        }
+
+        .card-img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .veg-icon {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            width: 20px;
+            height: 20px;
+            border: 2px solid #388e3c;
+            background: white;
+            padding: 2px;
+        }
+        .veg-dot {
+            width: 100%;
+            height: 100%;
+            background: #388e3c;
+            border-radius: 50%;
+        }
+
+        .card-body {
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .card-body h4 {
+            font-family: 'Playfair Display', serif;
+            font-size: 22px;
+            margin-bottom: 12px;
+        }
+
+        .details-box {
+            background: var(--bg-clean);
+            padding: 12px;
+            border-radius: 12px;
+            margin-bottom: 16px;
+            font-size: 13px;
+        }
+
+        .weight-select {
+            width: 100%;
+            padding: 12px;
+            border-radius: 12px;
+            border: 1px solid #E5E5EA;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .price-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: auto;
+        }
+
+        .price-display {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--maroon);
+        }
+
+        footer {
+            background-color: #ffffff;
+            padding: 50px 20px;
+            text-align: center;
+            border-top: 1px solid #E5E5EA;
+            margin-top: 80px;
+        }
+
+        .founder-badge {
+            background: var(--cream);
+            color: var(--maroon);
+            padding: 10px 24px;
+            border-radius: 30px;
+            display: inline-block;
+            font-weight: 700;
+            margin-bottom: 15px;
+            border: 1px solid rgba(90,24,39,0.1);
+            font-size: 15px;
+        }
+
+        .contact-number {
+            font-size: 20px;
+            font-weight: 700;
+            margin: 15px 0;
+        }
+
+        @media (max-width: 768px) {
+            header { padding: 15px 20px; flex-direction: column; gap: 15px; }
+            .hero h2 { font-size: 32px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="promo-bar">🎉 BULK OFFER: Buy 5kg Get 25% OFF! Use Code: BULK25 | COD Available (+₹50)</div>
+
+    <header>
+        <div class="logo-text">
+            <h1>Bindu Thekua</h1>
+            <span>MAA KE HAATH KA ASLI SWAAD</span>
+        </div>
+        <a href="https://wa.me/919279892749?text=Hi! I want to order traditional sweets." class="cta-btn">Order Now</a>
+    </header>
+
+    <section class="hero">
+        <span class="tag">AUTHENTIC & HOMEMADE</span>
+        <h2>Pure Taste,<br>Homemade with Love</h2>
+        <p>100% Veg • Made in Home • No Preservatives</p>
+    </section>
+
+    <main class="container" id="menu">
+        <div class="section-header">
+            <h3>Our Signature Menu</h3>
+            <p>Traditional Bihari flavours crafted meticulously</p>
+        </div>
+
+        <div class="grid">
+            <div class="card">
+                <div class="card-img-wrapper">
+                    <div class="veg-icon"><div class="veg-dot"></div></div>
+                    <img src="https://images.unsplash.com/photo-1506084868230-bb9d95c24759?q=80&w=600" alt="Traditional Bindu Thekua">
+                </div>
+                <div class="card-body">
+                    <h4>Bindu Traditional Thekua</h4>
+                    <div class="details-box">
+                        <strong>Ingredients:</strong> Whole Wheat Flour, Premium Jaggery/Sugar, Pure Desi Ghee, Fennel Seeds, Cardamom.
+                    </div>
+                    
+                    <select class="weight-select" id="thekua-select" onchange="updatePrice('thekua')">
+                        <option value="259">250g — ₹259</option>
+                        <option value="350">500g — ₹350</option>
+                        <option value="700">1kg — ₹700</option>
+                        <option value="1575">5kg Bulk — ₹1575 (25% OFF)</option>
+                    </select>
+
+                    <div class="price-row">
+                        <div class="price-display">₹<span id="thekua-price">259</span></div>
+                        <a href="#" class="cta-btn" onclick="sendWhatsAppOrder('Bindu Thekua', 'thekua-select')">Order</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-img-wrapper">
+                    <div class="veg-icon"><div class="veg-dot"></div></div>
+                    <img src="https://images.unsplash.com/photo-1601050690597-df056fb4ce78?q=80&w=600" alt="Special Festive Gujiya">
+                </div>
+                <div class="card-body">
+                    <h4>Special Gujiya (Mawa/Dry Fruit)</h4>
+                    <div class="details-box">
+                        <strong>Ingredients:</strong> Refined Flour, Rich Khoya stuffing, Chironji, Cardamom, Pure Ghee, Sugar.
+                    </div>
+                    
+                    <select class="weight-select" id="gujiya-select" onchange="updatePrice('gujiya')">
+                        <option value="269">250g — ₹269</option>
+                        <option value="360">500g — ₹360</option>
+                        <option value="720">1kg — ₹720</option>
+                        <option value="1620">5kg Bulk — ₹1620 (25% OFF)</option>
+                    </select>
+
+                    <div class="price-row">
+                        <div class="price-display">₹<span id="gujiya-price">269</span></div>
+                        <a href="#" class="cta-btn" onclick="sendWhatsAppOrder('Special Gujiya', 'gujiya-select')">Order</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div>
+            <span class="founder-badge">Founder - Himanshu Kumar</span>
+        </div>
+        <p style="font-weight: 600; color: var(--maroon); margin-bottom: 5px;">🏡 Made in Home • Pure & Fresh</p>
+        <p>Homemade Traditional Bihari Thekua & Gujiya</p>
+        <div class="contact-number">📞 Call / WhatsApp: +91 9279892749</div>
+        <p style="font-size: 12px; color: var(--text-light); margin-top: 15px;">© 2026 Bindu Thekua. Thank You For Supporting Our Small Business.</p>
+    </footer>
+
+    <script>
+        function updatePrice(productId) {
+            const selectElement = document.getElementById(productId + '-select');
+            const priceElement = document.getElementById(productId + '-price');
+            priceElement.innerText = selectElement.value;
+        }
+
+        function sendWhatsAppOrder(productName, selectId) {
+            const dropdown = document.getElementById(selectId);
+            const selectedText = dropdown.options[dropdown.selectedIndex].text;
+            const currentPrice = dropdown.value;
+            
+            const message = `Hi Himanshu! I want to order "${productName}" from your home kitchen.\nDetails: ${selectedText}\nTotal: ₹${currentPrice}. Please confirm my order!`;
+            window.open(`https://wa.me/919279892749?text=${encodeURIComponent(message)}`, '_blank');
+        }
+    </script>
+</body>
+</html>
